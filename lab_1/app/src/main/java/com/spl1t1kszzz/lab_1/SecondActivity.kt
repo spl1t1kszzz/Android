@@ -18,14 +18,14 @@ class SecondActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val third_activity_button = findViewById<Button>(R.id.third_activity_button)
-        third_activity_button.setOnClickListener {
+        val thirdActivityButton = findViewById<Button>(R.id.third_activity_button)
+        thirdActivityButton.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
         }
 
-        val main_activity_button = findViewById<Button>(R.id.main_activity_button)
-        main_activity_button.setOnClickListener {
+        val mainActivityButton = findViewById<Button>(R.id.main_activity_button)
+        mainActivityButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
