@@ -5,4 +5,5 @@
     <color name="red">#FF0000</color>
     <color name="green">#3DDC84</color>
     <color name="purple">#9D00FF</color>
+    <color name="recycler_background">#262E2F</color>
 </resources>

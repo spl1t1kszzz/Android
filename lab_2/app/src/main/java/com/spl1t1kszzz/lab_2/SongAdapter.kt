@@ -1,5 +1,7 @@
 package com.spl1t1kszzz.lab_2
 
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +13,9 @@ class SongAdapter(private val songList: List<Song>) :
     RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
     class SongViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
-        val subtitleTextView: TextView = itemView.findViewById(R.id.subtitleTextView)
+        var imageView: ImageView = itemView.findViewById(R.id.image)
+        val titleTextView: TextView = itemView.findViewById(R.id.artist_name)
+        val subtitleTextView: TextView = itemView.findViewById(R.id.track_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
@@ -27,6 +29,12 @@ class SongAdapter(private val songList: List<Song>) :
         holder.titleTextView.text = currentSong.title
         holder.subtitleTextView.text = currentSong.artist
         holder.imageView.setImageResource(currentSong.imageResource)
+        val roundedBackground = GradientDrawable().apply {
+            shape = GradientDrawable.RECTANGLE
+            cornerRadius = 16f
+            setColor(Color.parseColor("#000000"))
+        }
+        holder.imageView.background = roundedBackground
     }
 
     override fun getItemCount() = songList.size

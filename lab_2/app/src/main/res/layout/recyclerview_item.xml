@@ -1,50 +1,67 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="10dp"
-    android:background="@color/black"
-    android:gravity="center_vertical">
+    android:layout_margin="16dp"
+    android:background="@drawable/recycler_item_background">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/chelik"
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:scaleType="centerCrop"
-        android:contentDescription="Image" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintEnd_toStartOf="@id/playIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/titleTextView"
+            android:id="@+id/track_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16sp"
+            android:letterSpacing="0.025"
+            android:lineHeight="20dp" />
 
         <TextView
-            android:id="@+id/subtitleTextView"
+            android:id="@+id/artist_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:letterSpacing="0.025"
+            android:lineHeight="20dp" />
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/playButton"
+    <ImageView
+        android:id="@+id/playIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/chelik"
-        android:background="@color/black"
-        android:contentDescription="Play button"/>
-</LinearLayout>
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/play_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
