@@ -14,8 +14,8 @@ class SongAdapter(private val songList: List<Song>) :
 
     class SongViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imageView: ImageView = itemView.findViewById(R.id.image)
-        val titleTextView: TextView = itemView.findViewById(R.id.artist_name)
-        val subtitleTextView: TextView = itemView.findViewById(R.id.track_name)
+        val trackNameTextView: TextView = itemView.findViewById(R.id.track_name)
+        val artistNameTextView: TextView = itemView.findViewById(R.id.artist_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
@@ -26,8 +26,8 @@ class SongAdapter(private val songList: List<Song>) :
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val currentSong = songList[position]
-        holder.titleTextView.text = currentSong.title
-        holder.subtitleTextView.text = currentSong.artist
+        holder.trackNameTextView.text = currentSong.title
+        holder.artistNameTextView.text = currentSong.artist
         holder.imageView.setImageResource(currentSong.imageResource)
         val roundedBackground = GradientDrawable().apply {
             shape = GradientDrawable.RECTANGLE

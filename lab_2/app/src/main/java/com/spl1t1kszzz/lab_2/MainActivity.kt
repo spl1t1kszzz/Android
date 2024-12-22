@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val songList = mutableListOf<Song>()
         for (i in 0..9) {
-            songList.add(Song("No Hay Ley", "Kali Uchis", R.drawable.chelik))
+            songList.add(Song("No Hay Ley", "Kali Uchis", R.drawable.img))
         }
         recyclerView.adapter = SongAdapter(songList)
     }
